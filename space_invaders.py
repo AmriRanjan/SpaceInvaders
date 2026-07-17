@@ -15,10 +15,10 @@ class Game:
 
         #health and score setup
         self.lives = 3
-        self.live_surf = pygame.image.load("Graphics\player.png").convert_alpha()
+        self.live_surf = pygame.image.load("Graphics/player.png").convert_alpha()
         self.live_x_start_pos = screen_width - (self.live_surf.get_size()[0] * 3 + 20)
         self.score = 0
-        self.font = pygame.font.Font("Graphics\Pixeled.ttf",20) #font size
+        self.font = pygame.font.Font("Graphics/Pixeled.ttf",20) #font size
         #get_size gets the coordinates of the player image we imported, and [0] splices the x-coordinate only 
         #so the width*2 for 2 lives, and makes up for a + 20 offset for spacing between lives
 
@@ -41,13 +41,13 @@ class Game:
         self.extra_spawn_time = randint(400,800)
 
         #Audio setup
-        music = pygame.mixer.Sound("Audio\music.wav")
+        music = pygame.mixer.Sound("Audio/music.wav")
         music.set_volume(0.2)
         music.play(loops = -1) 
         #0 means music plays once no repeat, 1 means one repeat, -1 is infinite
-        self.laser_sound = pygame.mixer.Sound("Audio\laser.wav")
+        self.laser_sound = pygame.mixer.Sound("Audio/laser.wav")
         self.laser_sound.set_volume(0.5)
-        self.explosion_sound = pygame.mixer.Sound("Audio\Explosion.wav")
+        self.explosion_sound = pygame.mixer.Sound("Audio/Explosion.wav")
         self.explosion_sound.set_volume(0.3)
 
     def create_obstacle(self,x_start,y_start,offset_x):
@@ -198,7 +198,7 @@ class Game:
 
 class CRT:
     def __init__(self):
-        self.kv = pygame.image.load("Graphics\kv.png").convert_alpha()
+        self.kv = pygame.image.load("Graphics/kv.png").convert_alpha()
         self.kv = pygame.transform.scale(self.kv,(screen_width,screen_height)) #last 2 are the ratio references
     
     def create_crt_lines(self):
